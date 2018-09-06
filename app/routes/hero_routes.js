@@ -45,6 +45,11 @@ module.exports = function (app) {
     //   owner: 'Axeleo',
     //   name: 'social_fretwork'  
     // }
+    console.log("this is the query")
+    console.log(req.query)
+    console.log("this is the owner")
+    console.log(req.query.owner)
+    console.log(req.query.repoName)
     let variables = {
       owner: req.query.owner,
       name: req.query.repoName
