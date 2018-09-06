@@ -8,11 +8,9 @@ const app = express();
 // }));
 // const bodyParser = require('body-parser');
 
-const port = 8000;
+// const port = 8000;
 
 require('./app/routes')(app);
 
-app.listen(port, () => {
-  console.log('We are live on ' + port);
-});
+app.listen(process.env.PORT || 5000)
 
