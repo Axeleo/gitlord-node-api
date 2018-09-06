@@ -18,7 +18,7 @@ const { request, GraphQLClient } = require('graphql-request')
 
 const client = new GraphQLClient('https://api.github.com/graphql', {
   headers: {
-    Authorization: 'Bearer TOKEN HERE',
+    Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
   },
 })
 
