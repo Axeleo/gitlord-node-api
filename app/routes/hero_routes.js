@@ -41,14 +41,14 @@ const query = `query heroQuery($owner: String!, $name: String!) {
 client.request(query).then(data => console.log(data))
 module.exports = function (app) {
   app.get('/heros', (req, res) => {
-    let variables = {
-      owner: 'Axeleo',
-      name: 'social_fretwork'  
-    }
     // let variables = {
-    //   owner: req.query.owner,
-    //   name: req.query.repoName
+    //   owner: 'Axeleo',
+    //   name: 'social_fretwork'  
     // }
+    let variables = {
+      owner: req.query.owner,
+      name: req.query.repoName
+    }
     client.request(query, variables).then(data => {
       console.log(data)
       let nodes = data.repository.pullRequests.nodes
